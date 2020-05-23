@@ -47,7 +47,27 @@ public:
 	}
 };
 
-int main(){
-	mallardDuck *obj = new mallardDuck();
-	obj->performFly();
-}
+
+class modelDuck : public duck{
+public:
+	modelDuck(){
+		setQuackBehavior(new squeak());
+		setFlyBehavior(new noFly());
+	}
+
+	void display(){
+		cout<<"Hey, I'm Model duck"<<endl;
+	}
+};
+
+class rocketDuck : public duck{
+public:
+	rocketDuck(){
+		setQuackBehavior(new mute());
+		setFlyBehavior(new flyLikeRocket());
+	}
+
+	void display(){
+		cout<<"Hey, I'm duck with rocket speed"<<endl;
+	}
+};
