@@ -1,0 +1,24 @@
+Problem - Design Weather-O-Rama application that uses weatherData object to update three
+displays for current condition, weather stats and forecast. Also it should release an API so
+that other developers can write their own weather display.
+
+
+Take away points - 
+	1. Strive for loosely coupled designs between the objects that interact. Loosely
+	coupled designs allows us to build flexible Object Oriented systems that can handle
+	changes because they minimize interdependency between objects.
+
+
+Observer Pattern - It defines a one-to-many dependency between objects so that when one
+object changes state, all of its dependents are notified and updated automatically.	
+With the observer pattern, the SUBJECT is the object that contains the state and controls
+it. So, there is ONE SUBJECT with state. The OBSERVER on the other hand, use the state,
+even if they don't own it. There are many OBSERVERS and they rely on the SUBJECT to update
+them with new states.
+
+Two different methods are used to update the OBSERVERS in case of new state.
+
+Push - In this SUBJECT pushes the new state to the OBSERVERS whenever state changes.
+Pull - In this OBSERVERS make request to SUBJECT for new state. A
+		getter method is implemented for each attribute of state in SUBJECT.
+
