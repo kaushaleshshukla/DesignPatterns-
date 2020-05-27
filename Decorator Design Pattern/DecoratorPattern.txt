@@ -1,0 +1,7 @@
+Problem - Design the Starbuzz Coffee Ordering System to match their beverage offerings along with several condiments.
+
+Take away points - 
+	1. Classes should be open for extension, but closed for modification. Allow classes to be easily extended to incorporate new behavior without modifying the existing code.
+
+Decorator Pattern - Attach additional responsibilities to an object dynamically. Decorators 
+provide a flexible alternative to subclassing for extending functionality. 
