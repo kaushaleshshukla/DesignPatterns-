@@ -1,0 +1,14 @@
+Problem - Design a class for which there is only one instance.
+
+Singleton Pattern - It ensures a class has only one instance, and provides a global point
+of access to it.
+
+For thread safety in multi-threaded environment there are three methods used to implement
+Singleton class.
+
+1. Create an instance of Singleton in static initializer.
+
+2. Synchronize the method for getting instance. But Synchronizing a method can decrease
+performance by considerable factor.
+
+3. First check if instance is created if not then, then synchronize the instance creation.
