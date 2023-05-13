@@ -12,3 +12,38 @@ Singleton class.
 performance by considerable factor.
 
 3. First check if instance is created if not then, then synchronize the instance creation.
+
+To-Do
+
+Subclassing Singleton
+
+Pros
+	1) Easy implementation
+	2) Effective when you know you need one of something
+	3) Avoid polluting global namespace with lots of varibles
+	4) Memory is only allocated if you actually use the Singleton ( implementation based)
+
+Cons
+    1) Wrong usage could take code refactoring.
+    2) Not thread-safe, adding lock will slow down application
+    3) Effectively we are using globals. (most likely global under a namespace)
+
+Pointer vs reference for getInstance()
+   // No reason to use a pointer.
+    Singleton * MySingleton = &Singleton::instance();
+
+    // When you have a pointer there is no ownership semantics
+    // associated. So it is easy to make a mistake and accidentally
+    // call delete on the pointer.
+
+
+    // It returns a reference, so capture a reference
+    Singleton&  MySingleton = Singleton::instance(); 
+
+    // Here ownership semantics are clear.
+    // You don't own the object (you simply have a reference to it).
+    // It is your responsibility to make sure the object has not been
+    // destroyed since you retrieved the reference.
+
+
+ 
