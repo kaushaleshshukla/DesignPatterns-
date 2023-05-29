@@ -1,13 +1,21 @@
 Problem - Design duck pond simulation game with different flying and quacking behavior
 
 Take away points
-	1. Take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary without affecting those that don't.
+	1. Take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary
+	   without affecting those that don't.
 
-	2. Program to an interface, not an implementation.
-		Program to a supertype. The declared type of the variable should be a supertype, usually an abstract class or interface, so that the objects assigned to those variables can be of any type of any concrete implementation of the supertype, which means the class declaring them doesn't have to know about the actual object type.
+	2. Program to an interface, not an implementation OR Program to a supertype.
+	   The declared type of the variable should be a supertype, usually an abstract class or interface, 
+	   so that the objects assigned to those variables can be of any type of any concrete implementation of the 
+	   supertype, which means the class declaring them doesn't have to know about the actual object type.
 
-	3. Favour composition over inheritence.
+	3. Favour composition over inheritance. It let you encapsulate a family of algorithms into their own set of classes
+	   and change behavior at runtime by setting the object's behavior property.
+	   HAS-A can be better than IS-A. IS-A relationship is tightly coupled and not flexible.
+
+	4. We should give more priority to maintainability and extensibility over reuse.
 
 
 
-Strategy Pattern : It defines a family of algorithms, encapsulate each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+Strategy Pattern : It defines a family of algorithms, encapsulate each one, and makes them interchangeable.
+					Strategy lets the algorithm vary independently from clients that use it.

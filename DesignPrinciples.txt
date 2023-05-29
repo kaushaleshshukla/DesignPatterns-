@@ -1,0 +1,18 @@
+Design Principles
+
+    1. Take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary
+	   without affecting those that don't.
+    2. Program to an interface, not an implementation.
+    3. Favor composition over inheritance.
+        When behavior is inherited by subclassing, that behavior is set statically at compile time. In addition,
+        all subclasses must inherit the same behavior. If however, behavior is extended through composition,
+        then that behavior is not set statically at compile time: it can be extended dynamically at run-time by
+        adding new behavior as needed by using objects that implement the appropriate behavior interface.
+    4. Strive for loosely coupled designs between objects that interact.
+        a. HAS-A is better than IS-A relationship.
+        b. In Observer pattern subject and observers are loosely coupled.
+    5. Classes should be open for extension, but closed for modification.
+       Classes should be easily extendable to incorporate new behavior without modifying existing code, and
+       that new classes that add functionality should not require changes to existing classes.
+       
+
