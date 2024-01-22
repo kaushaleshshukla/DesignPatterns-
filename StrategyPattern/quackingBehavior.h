@@ -1,27 +1,21 @@
 
 // Interface that all quacking behavior classes implements
-class quackingBehavior{
+class quackingBehavior {
 public:
-	virtual void sound() = 0;
+  virtual void sound() = 0;
 };
 
-class mute : public quackingBehavior{
+class mute : public quackingBehavior {
 public:
-	void sound(){
-		cout<<"Silence"<<endl;
-	}
+  void sound() { cout << "Silence" << endl; }
 };
 
-class quack : public quackingBehavior{
+class quack : public quackingBehavior {
 public:
-	void sound(){
-		cout<<"Quack Quack"<<endl;
-	}
+  void sound() { cout << "Quack Quack" << endl; }
 };
 
-class squeak : public quackingBehavior{
+class squeak : public quackingBehavior {
 public:
-	void sound(){
-		cout<<"Squeak"<<endl;
-	}
+  void sound() { cout << "Squeak" << endl; }
 };

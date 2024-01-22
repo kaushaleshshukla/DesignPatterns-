@@ -1,9 +1,7 @@
-class beverage{
+class beverage {
 public:
-	string description = "Unknown Beverage";
+  string description = "Unknown Beverage";
 
-	virtual string getDescription(){
-		return description;
-	}
-	virtual float getCost() = 0;
+  virtual string getDescription() { return description; }
+  virtual float getCost() = 0;
 };
