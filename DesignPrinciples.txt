@@ -4,7 +4,7 @@ Design Principles
 	   without affecting those that don't.
     2. Program to an interface, not an implementation.
     3. Favor composition over inheritance.
-        When behavior is inherited by subclassing, that behavior is set statically at compile time. In addition,
+        When behavior is inherited by subclasses, that behavior is set statically at compile time. In addition,
         all subclasses must inherit the same behavior. If however, behavior is extended through composition,
         then that behavior is not set statically at compile time: it can be extended dynamically at run-time by
         adding new behavior as needed by using objects that implement the appropriate behavior interface.
@@ -14,5 +14,20 @@ Design Principles
     5. Classes should be open for extension, but closed for modification.
        Classes should be easily extendable to incorporate new behavior without modifying existing code, and
        that new classes that add functionality should not require changes to existing classes.
-       
+    6. Dependency Inversion Principle: Depend on abstractions. Do not depend on
+       concrete classes
+        a. High-level modules should not depend on low-level modules. Both should
+        depend on abstractions.
+        b. Abstractions should not depend on details. Details should depend on abstractions.
 
+       Guidelines that helps to avoid violation of Dependency Inversion Principle
+        a. No variable should hold a reference to a concrete class.
+           If you use new, you'll be holding a reference to a concrete class.
+           Use a factory to get around that.
+        b. No class should derive from a concrete class.
+           If you derive from a concrete class, you are depending on a concrete class.
+           Derive from an abstraction, like an interface or an abstract class.
+        c. No method should override an implemented method of any of its base classes.
+           If you override an implemented method,then your class wan't really an
+           abstraction to start with. Those methods implemented in the base class are
+           meant to be share by all your subclasses.

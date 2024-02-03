@@ -1,0 +1,57 @@
+Simple Factory
+    1. Simple Factory is not a design pattern, but a programming idiom.
+    2. In this pattern, the factory class has a method that creates and returns
+    different types of objects based on the input parameter.
+    3. This can also be implemented using a static method or a free function. The 
+    advantage of using static method is that we don't need to instantiate the factory class,
+    but the disadvantage is that we cannot subclass the factory class.
+
+Factory Method pattern
+The Factory Method pattern defines an interface for creating an object, but lets subclasses
+decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+    1. In this pattern, we add a "virtual Product factoryMethod()" method to the base class 
+    which acts as a factory.
+    2. This factory method handles the object creation and encapsulates it in a subclass.
+    This decouples the client code in the base class from the object creation code in the
+    subclass.
+    3. The factory method returns the Product object, that is typically consumed within the
+    methods defined in the base class.
+    4. The factory method isolates the client(like methods defined in base class) from knowing
+    what kind of concrete Product is actually created.
+    5. Factory method may be parameterized (or not) to select among several variations of a
+    product.
+    6. Factory method pattern typically represents parallel hierarchies of classes, one for
+    products and another for the factories that create them. Both hierarchies has abstract
+    classes that are extended by concrete classes (concrete products and concrete factories).
+    7. Factory method is useful even if you only have one concrete creator because you are
+    decoupling the implementation of the product from its use.
+    8. Factory method is the technique for adhering to the Dependency Inversion Principle.
+
+Abstract Factory pattern
+Abstract Factory patter provides an interface for creating families of related or dependent
+objects without specifying their concrete classes.
+    1. In this pattern, we define an abstract class that acts as a factory for creating
+    abstract Product objects.
+    2. The abstract factory class has a set of "virtual Product createProduct()" methods
+    for creating different types of Product objects.
+    3. The concrete factory classes implement the abstract factory class and provide the
+    implementation for the factory methods to create concrete Product objects.
+
+
+Difference between Abstract Factory and Factory Method patterns
+
+1. Factory Method pattern provides an interface for creating one product, while Abstract
+Factory pattern provides an interface for creating families of related or dependent
+products.
+2. Each subclass of the Factory Method decides which concrete class to instantiate, while
+subclasses of the Abstract Factory decide which family of concrete classes to instantiate.
+3. Factory Method pattern uses inheritance and delegates object creation to its subclasses.
+Abstract Factory pattern uses object composition, object creation is implemented in methods
+exposed in the factory interface.
+4. Intent of Factory Method is to allow a class to defer instantiation to its subclasses.
+While intent of Abstract Factory is to create families of related objects without having
+to depend on their concrete classes.
+5. Abstract factory is used whenever we have families of products needed to create and
+we want to make sure that clients create products that belong together. While Factory
+Method is used when we have a single product to create and we want to let subclasses
+decide which concrete class to instantiate.
