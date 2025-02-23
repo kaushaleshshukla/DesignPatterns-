@@ -1,0 +1,19 @@
+Adapter Pattern converts the interface of a class into another interface
+the clients expect. Adapter lets classes work together that couldn't otherwise
+because of incompatible interfaces.
+
+This acts to decouple the client from the implemented interface, and if
+we expect the interface to change over time, the adapter encapsulates that
+change over time so that client doesn't have to be modified each time.
+
+Kinds of Adapter
+
+Object Adapters:
+In this, adaptor class is subclass of Target_interface and uses composition by
+keeping object of Adaptee (actual_interface)
+
+
+Class Adapters:
+Class Adapters needs multiple inheritance to implement it.
+In this, instead of using composition Adapter subclasses the Adaptee and 
+Target_interface
