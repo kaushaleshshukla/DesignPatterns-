@@ -1,3 +1,30 @@
+SOLID Principles
+
+S - Single Responsibility Principle (SRP):
+A class should have only one reason to change, meaning it should have a single job or responsibility.
+Each class should focus on a single functionality or concern.
+
+O - Open-Closed Principle (OCP):
+Software entities (classes, modules, functions) should be open for extension but closed for modification.
+You should be able to add new functionality without changing existing code.
+
+L - Liskov Substitution Principle (LSP):
+Objects of a superclass should be replaceable with objects of a subclass without breaking the application.
+Derived classes must be substitutable for their base classes.
+Example: If you have a Bird class, any subclass like Duck or Eagle should work wherever Bird is expected.
+
+I - Interface Segregation Principle (ISP):
+Clients should not be forced to depend upon interfaces they do not use.
+Many specific interfaces are better than one general-purpose interface.
+Example:A violation occurs with a single Worker interface having methods like eat(), work(), and clean()
+when some implementers, like a RobotWorker, cannot perform all actions. Adherence involves creating 
+separate interfaces like Eater, Worker, and Cleaner
+
+D - Dependency Inversion Principle (DIP):
+High-level modules should not depend on low-level modules. Both should depend on abstractions.
+Abstractions should not depend on details. Details should depend on abstractions.
+
+
 Design Principles
 
     1. Take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary
@@ -8,6 +35,7 @@ Design Principles
         all subclasses must inherit the same behavior. If however, behavior is extended through composition,
         then that behavior is not set statically at compile time: it can be extended dynamically at run-time by
         adding new behavior as needed by using objects that implement the appropriate behavior interface.
+        Use composition for has-a, can-do relation or if you need runtime flexibility.
     4. Strive for loosely coupled designs between objects that interact.
         a. HAS-A is better than IS-A relationship.
         b. In Observer pattern subject and observers are loosely coupled.
@@ -28,6 +56,6 @@ Design Principles
            If you derive from a concrete class, you are depending on a concrete class.
            Derive from an abstraction, like an interface or an abstract class.
         c. No method should override an implemented method of any of its base classes.
-           If you override an implemented method,then your class wan't really an
+           If you override an implemented method,then your class won't be really an
            abstraction to start with. Those methods implemented in the base class are
            meant to be share by all your subclasses.

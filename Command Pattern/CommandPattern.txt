@@ -1,0 +1,43 @@
+COMMAND PATTERN
+================
+
+DEFINITION:
+-----------
+The Command Pattern encapsulates a request as an object, thereby letting you 
+parameterize clients with different requests, queue or log requests, and 
+support undoable operations.
+
+The Command Pattern turns a request into a stand-alone object that contains 
+all information about the request. This transformation lets you pass requests 
+as method arguments, delay or queue a request's execution, and support 
+undoable operations.
+
+Use it when you need to decouple an object making requests from objects that
+knows how to perform the request.
+
+KEY COMPONENTS:
+===============
+1. Command Interface - Defines contract for executing operations
+2. Concrete Command - Implements command interface, binds receiver to action
+3. Receiver - Performs the actual work when command is executed
+4. Invoker - Holds commands and triggers their execution
+5. Client - Creates and configures the command structure
+
+BENEFITS:
+=========
+• Decoupling: Separates invoker from receiver
+• Flexibility: Easy to add new commands without changing existing code
+• Undoable Operations: Commands can store state for undo functionality
+• Macro Commands: Multiple commands can be combined
+• Queuing and Logging: Commands can be stored and logged
+• Remote Execution: Commands can be transmitted across networks
+
+COMMON USE CASES:
+================
+• GUI buttons and menu items
+• Macro recording and playback
+• Undo/Redo functionality
+• Progress bars and background processing
+• Database transactions
+• Network protocols
+• Job queues and thread pools
