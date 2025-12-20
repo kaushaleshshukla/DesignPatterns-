@@ -1,0 +1,18 @@
+SPECIFICATION PATTERN:
+Encapsulates business rules into reusable, combinable "rule" objects.
+
+CORE INTERFACE
+virtual bool isSatisfiedBy(T item) const = 0;
+
+KEY USE CASES
+Filtering: Dynamic search (e.g., "SUV" AND "Price < $100").
+Validation: Checking if an object meets rules before saving/processing.
+Eligibility: Determining if a user is allowed to perform an action.
+Bulk Actions: Identifying specific groups of entities for updates.
+
+WHY USE IT?
+OCP: Add new filters without changing existing code.
+
+Single Pass: Loops through data once, evaluating all combined logic.
+
+Testable: Each business rule can be unit tested in isolation.
