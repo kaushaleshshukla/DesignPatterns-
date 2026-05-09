@@ -1,0 +1,80 @@
+BUILDER PATTERN
+================
+
+DEFINITION:
+-----------
+The Builder Pattern is a creational design pattern that lets you construct
+complex objects step by step. It allows producing different types and
+representations of an object using the same construction code.
+
+Use it when you need to construct an object that requires many optional
+parameters or when the construction process must allow different
+representations of the constructed object.
+
+PROBLEM IT SOLVES:
+==================
+1. Telescoping Constructor: A complex object may need a massive constructor
+   with many parameters, most of which are unused in typical scenarios.
+   Example: House(windows, doors, rooms, garage, pool, garden, statues...)
+   Most houses won't use all parameters, making the constructor calls ugly
+   and hard to read.
+
+2. Subclass Explosion: Creating a subclass for every possible configuration
+   leads to an unwieldy class hierarchy that grows exponentially with each
+   new parameter.
+
+KEY COMPONENTS:
+===============
+1. Builder Interface - Declares the construction steps common to all builders
+   (e.g., buildWalls(), buildDoor(), buildRoof()).
+2. Concrete Builder - Provides specific implementation of construction steps.
+   Different builders can produce products that don't share a common interface.
+3. Product - The resulting complex object being built. Products from different
+   builders may belong to entirely different class hierarchies.
+4. Director (Optional) - Defines the order in which construction steps are
+   called. Encapsulates specific construction routines that can be reused.
+5. Client - Creates a builder, optionally passes it to a director, then
+   retrieves the finished product from the builder.
+
+IMPORTANT:
+==========
+The result retrieval method (e.g., getResult()) is typically defined only
+in the concrete builder, not in the builder interface, since different
+builders may produce entirely unrelated products.
+
+BENEFITS:
+=========
+• Step-by-step Construction: Build objects incrementally, defer steps,
+  or run steps recursively
+• Reuse Construction Code: Same construction process can build different
+  representations
+• Single Responsibility Principle: Isolates complex construction code
+  from business logic of the product
+• Flexibility: Only use the steps you need for a specific configuration
+• Different Representations: Same construction process can produce
+  different products (e.g., a car and its manual)
+
+DRAWBACKS:
+==========
+• Increased Complexity: Requires creating multiple new classes (builder
+  interface, concrete builders, optionally director)
+
+WHEN TO USE:
+============
+1. To eliminate telescoping constructors - replace many overloaded
+   constructors with step-by-step building, calling only needed steps.
+2. When you want the same construction process to create different
+   representations of products (e.g., stone house vs wooden house).
+3. When constructing Composite trees or other complex objects that require
+   recursive or multi-step construction.
+
+RELATIONS WITH OTHER PATTERNS:
+==============================
+• Factory Method: Simpler but less flexible. Designs often start with
+  Factory Method and evolve toward Builder as complexity grows.
+• Abstract Factory: Creates families of products in one call. Builder
+  constructs products step by step before fetching the result.
+• Composite: Builder can be used to construct complex Composite trees
+  step by step.
+• Singleton: Builder (and Abstract Factory, Prototype) can all be
+  implemented as Singletons.

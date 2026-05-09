@@ -28,7 +28,7 @@ Abstractions should not depend on details. Details should depend on abstractions
 Design Principles
 
     1. Take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary
-	   without affecting those that don't.
+	    without affecting those that don't.
     2. Program to an interface, not an implementation.
     3. Favor composition over inheritance.
         When behavior is inherited by subclasses, that behavior is set statically at compile time. In addition,
