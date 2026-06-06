@@ -1,0 +1,28 @@
+State Pattern: It lets an object alter its behavior when its internal state
+changes. The object appears as if it changed its class.
+
+PROBLEM IT SOLVES:
+Implementing a state machine with large if/switch ladders scattered across
+many methods. Adding or changing a state forces edits across every branch,
+and similar conditional blocks get duplicated.
+
+KEY COMPONENTS:
+	1. Context - Holds a reference to a State object and delegates state-specific
+	   work to it. Exposes a setter to swap the active state at runtime.
+	2. State Interface - Declares the state-specific methods.
+	3. Concrete States - Implement behavior for one state. Usually hold a
+	   back-reference to the Context to trigger transitions themselves.
+
+BENEFITS:
+	• SRP: State-specific code is grouped into its own class.
+	• OCP: Add new states without modifying existing ones or the context.
+	• Removes bulky conditionals from the context.
+
+DRAWBACK:
+	• Overkill if there are only a few states or they rarely change.
+
+STATE vs STRATEGY:
+Same structure, different intent. Strategy's helpers are independent and
+unaware of each other - the client picks one. State's helpers know about
+each other and can transition between themselves, modeling a finite-state
+machine instead of interchangeable algorithms.
