@@ -1,0 +1,39 @@
+Chain of Responsibility Pattern: It lets you pass a request along a chain of
+handlers. Each handler decides either to process the request or to forward
+it to the next handler in the chain.
+
+PROBLEM IT SOLVES:
+Multiple sequential checks or processing steps (auth, validation, caching,
+logging...) bundled into one place create a bloated, tightly-coupled class.
+Adding a new check risks breaking the others, and reusing a subset of the
+checks elsewhere leads to duplication.
+
+KEY COMPONENTS:
+	1. Handler Interface - Declares the method to handle a request and
+	   usually a setter for the next handler in the chain.
+	2. Base Handler (optional) - Shared boilerplate: holds the reference to
+	   the next handler and a default "forward to next" implementation.
+	3. Concrete Handlers - Contain the actual processing code. Each decides
+	   whether to handle the request, forward it, or stop the chain.
+	4. Client - Assembles the chain (statically or at runtime) and sends a
+	   request to the first handler.
+
+BENEFITS:
+	• SRP: Decouples invokers from performers; each handler does one thing.
+	• OCP: Add new handlers without changing existing ones or the client.
+	• Control over the order in which requests are handled.
+	• Chains can be reconfigured dynamically.
+
+DRAWBACK:
+	• A request may travel the whole chain and never get handled.
+
+VARIANTS:
+	• Run-all: every eligible handler processes the request in order.
+	• First-match: only the first capable handler processes it; common in
+	  GUI event bubbling (button -> panel -> dialog).
+
+CHAIN vs DECORATOR:
+Structurally similar (both use recursive composition), but the intent
+differs. Decorators must always pass the request along and augment the
+result. Chain handlers act independently and can stop the flow whenever
+one of them fully handles the request.
